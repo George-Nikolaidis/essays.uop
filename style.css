@@ -1,0 +1,167 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #101827;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    width: min(94vw, 640px);
+    text-align: center;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.game-header h1 {
+    font-size: 22px;
+}
+
+.stats {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.game-area {
+    position: relative;
+    width: 100%;
+    margin: 12px auto;
+    overflow: hidden;
+    border: 3px solid #53657f;
+    border-radius: 12px;
+    background: #263449;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 24px;
+    background: rgb(10 20 35 / 88%);
+}
+
+.overlay h2 {
+    margin-bottom: 0;
+}
+
+.overlay p {
+    line-height: 1.5;
+}
+
+button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #ffd447;
+    color: #172033;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffe580;
+}
+
+.hidden {
+    display: none;
+}
+
+.instructions {
+    color: #c4cfdf;
+    font-size: 14px;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 12px auto 0;
+    padding: 7px 12px;
+    border: 1px solid #53657f;
+    border-radius: 999px;
+    background: #1b293b;
+    color: #dbe5f2;
+    font-size: 13px;
+}
+
+.mute-button {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid #60738d;
+    border-radius: 50%;
+    background: #263449;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.mute-button:hover {
+    background: #354960;
+}
+
+.audio-controls input[type="range"] {
+    width: 110px;
+    accent-color: #ffd447;
+    cursor: pointer;
+}
+
+.volume-value {
+    min-width: 34px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 520px) {
+    .game-header {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .game-header h1 {
+        margin-bottom: 8px;
+    }
+
+    .stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .audio-controls {
+        gap: 7px;
+        padding-inline: 9px;
+    }
+
+    .audio-controls input[type="range"] {
+        width: 90px;
+    }
+}

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subway Runner</title>
+
+    <!-- Φόρτωση CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Φόρτωση JavaScript -->
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <main class="game-container">
+        <header class="game-header">
+            <h1>Subway Runner</h1>
+            <div class="stats">
+                <span>Σκορ: <strong id="score">0</strong></span>
+                <span>Νομίσματα: <strong id="coins">0</strong></span>
+                <span>Επίπεδο: <strong id="level">1</strong></span>
+            </div>
+        </header>
+
+        <section class="game-area">
+            <canvas id="gameCanvas"
+                    width="600"
+                    height="640">
+                Ο browser σου δεν υποστηρίζει canvas.
+            </canvas>
+
+            <div id="startScreen" class="overlay">
+                <h2>Έτοιμος να τρέξεις;</h2>
+                <p>Απόφυγε τα εμπόδια και μάζεψε νομίσματα!</p>
+                <button id="startButton">Έναρξη παιχνιδιού</button>
+            </div>
+
+            <div id="gameOverScreen" class="overlay hidden">
+                <h2>Game Over</h2>
+                <p>Τελικό σκορ: <strong id="finalScore">0</strong></p>
+                <button id="restartButton">Παίξε ξανά</button>
+            </div>
+        </section>
+
+        <div class="audio-controls" aria-label="Ρυθμίσεις ήχου">
+            <button id="muteButton"
+                    class="mute-button"
+                    type="button"
+                    aria-label="Σίγαση ήχου"
+                    aria-pressed="false">
+                <span id="volumeIcon" aria-hidden="true">🔊</span>
+            </button>
+            <label for="volumeSlider">Ένταση</label>
+            <input id="volumeSlider"
+                   type="range"
+                   min="0"
+                   max="100"
+                   value="65"
+                   aria-label="Ένταση ήχου">
+            <span id="volumeValue" class="volume-value">65%</span>
+        </div>
+
+        <p class="instructions">
+            Κίνηση: ← → ή A / D · Άλμα: ↑ ή Space · Σκύψιμο: ↓
+        </p>
+    </main>
+</body>
+</html>
